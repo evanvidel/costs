@@ -3,21 +3,24 @@ import Home from './componets/pages/Home';
 import Company from './componets/pages/Company';
 import Contact from './componets/pages/Contact';
 import NewProject from './componets/pages/NewProject';
+import Projects from './componets/pages/Projects';
+
 import Container from './componets/layout/Container';
+import Navbar from './componets/layout/Navbar';
+import Footer from './componets/layout/Footer';
+
 
 function App() {
   return (
     <Router>
-      <ul>
-        <Link to="/">Home</Link>
-        <Link to="/company">Empresa</Link>
-        <Link to="/contact">Contato</Link>
-        <Link to="/newproject">Novo Projeto</Link>
-      </ul>
+      <Navbar/>
       <Switch>
         <Container customClass="min-height">
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/projects">
+          <Projects />
         </Route>
         <Route exact path="/company">
           <Company />
@@ -30,7 +33,7 @@ function App() {
         </Route>
         </Container>
       </Switch>
-      <p>Footer</p>
+      <Footer/>
     </Router>
   );
 }
